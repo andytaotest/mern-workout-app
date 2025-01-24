@@ -22,6 +22,9 @@ const app = express();
 // Allow requests from all origins (for development only)
 app.use(cors());
 
+// Handle preflight requests globally
+app.options("*", cors());
+
 // Middleware:
 // any code that executes between us getting a request on the server
 // and us sending a response back to the client
