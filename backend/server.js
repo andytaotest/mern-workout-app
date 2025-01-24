@@ -12,8 +12,10 @@ const express = require("express");
 const mongoose = require("mongoose");
 // Require routes
 const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user");
 // Require cors
 const cors = require("cors");
+
 // Set up the express app
 const app = express();
 
@@ -37,6 +39,7 @@ app.use((req, res, next) => {
 // Routes
 // workoutRoutes is triggered when we make a request to /api/workouts
 app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 // Connect to DB
 mongoose
